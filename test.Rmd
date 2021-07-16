@@ -1,0 +1,90 @@
+---
+title: "Testing R Markdown"
+author: "Sebnem K."
+date: "7/16/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+
+# TESTING MARKUP
+
+
+This is *italic*
+
+This is **bold**
+
+Let's try ***three stars***
+
+Here I have some `r mean(c(2,3,4))` here
+
+# Header1
+
+## Header2
+
+### Header3
+
+I have a list
+
+* first item
+* next item
+
+I have an ordered list
+
+1. item
+
+For google click [here](http://www.google.com)
+
+### Manual pipe table (must end with a blank line)
+
+
+| Plant | Temp. | Growth |
+|:------|:-----:|-------:|
+| A     | 20    | 0.65   |
+| B     | 20    | 0.95   |
+| C     | 20    | 0.15   |
+
+
+
+| Plant | Temp. | Growth |
+|-------|-------|--------|
+| A     | 20    | 0.65   |
+| B     | 20    | 0.95   |
+| C     | 20    | 0.15   |
+
+
+## CARS
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+The data set has `r nrow(cars)` rows
+
+```{r cars, results='markup'}
+summary(cars)
+```
+
+
+### Testing some stuff
+pretty table with kable
+
+```{r cars2, results='asis', eval=F, echo=F}
+knitr::kable(cars)
+```
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
